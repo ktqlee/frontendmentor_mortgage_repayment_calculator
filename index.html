@@ -15,14 +15,16 @@
   <div class="calculator_box">
     <form id="form">
 
-      <span><h1>Mortgage Calculator</h1></span>     
-      <span>Clear All</span>
-      
+      <div class="form_top_row">
+        <h1 id="mortgage_calculator_heading">Mortgage Calculator</h1>   
+        <span>Clear All</span>
+      </div>
+
       <div class="input_container">
         <p>Mortgage Amount</p>
 
         <label for="mortgage_amount">
-          <span>€</span>
+          <span>£</span>
           <input id="mortgage_amount" type="number" min="0">
         </label>
 
@@ -76,7 +78,7 @@
   <div class="result_box">
 
     <div class="empty_result">
-      <img src="/assets/images/illustration-empty.svg" alt="Calculator Icon">
+      <img src="/assets/images/illustration-empty.svg" alt="Calculator Icon" id="result_cal_icon">
       <h1>Results shown here</h1>
       <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
     </div>
