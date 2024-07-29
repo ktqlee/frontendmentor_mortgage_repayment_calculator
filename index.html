@@ -9,6 +9,11 @@
 
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -17,14 +22,14 @@
 
       <div class="form_top_row">
         <h1 id="mortgage_calculator_heading">Mortgage Calculator</h1>   
-        <span>Clear All</span>
+        <span id="clear_all_button">Clear All</span>
       </div>
 
       <div class="input_container">
-        <p>Mortgage Amount</p>
+        <p class="input_col_p">Mortgage Amount</p>
 
         <label for="mortgage_amount">
-          <span>£</span>
+          <span class="input_tag input_tag_type1">£</span>
           <input id="mortgage_amount" type="number" min="0">
         </label>
 
@@ -33,35 +38,37 @@
       <div class="input_container">
 
         <div class="input_sub_item">
-          <p>Mortgage Term</p>
+          <p class="input_col_p">Mortgage Term</p>
 
           <label for="mortgage_term">
             <input id="mortgage_term" type="number" min="0">
-            <span>years</span>
+            <span class="input_tag" id="years_input_tag">years</span>
           </label>
         </div>
+        
+        <div class="seperate_div"></div>
 
         <div class="input_sub_item">
-          <p>Interest Rate</p>
+          <p class="input_col_p">Interest Rate</p>
 
           <label for="interest_rate">
             <input id="interest_rate" type="number" min="0">
-            <span>%</span>
+            <span class="input_tag">%</span>
           </label>
         </div>
 
       </div>
 
       <div class="input_container">
-        <p>Mortgage Type</p>
+        <p class="input_col_p">Mortgage Type</p>
 
         <label for="mortgage_type_repayment">
-          <input id="mortgage_type_repayment" type="radio" name="mortgage_type" value="repayment">
+          <input id="mortgage_type_repayment" class="radio_input" type="radio" name="mortgage_type" value="repayment">
           <span>Repayment</span>
         </label>
 
         <label for="mortgage_type_interest_only">
-          <input id="mortgage_type_interest_only" type="radio" name="mortgage_type" value="interest only">
+          <input id="mortgage_type_interest_only" class="radio_input" type="radio" name="mortgage_type" value="interest only">
           <span>Interest Only</span>
         </label>
 
