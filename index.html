@@ -62,7 +62,7 @@
       <div class="input_container">
         <p class="input_col_p">Mortgage Type</p>
 
-        <label for="mortgage_type_repayment">
+        <label for="mortgage_type_repayment" id="mortg_type_repayment_label">
           <input id="mortgage_type_repayment" class="radio_input" type="radio" name="mortgage_type" value="repayment">
           <span class="mortgage_type_span">Repayment</span>
         </label>
@@ -84,38 +84,32 @@
 
   <div class="result_box">
 
+    <!-- Empty results  -->
     <div class="empty_result">
       <img src="/assets/images/illustration-empty.svg" alt="Calculator Icon" id="result_cal_icon">
       <h1>Results shown here</h1>
       <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
     </div>
 
-    <div class="completed_result" hidden="true">
+    <!-- Completed results -->
+    <div class="completed_result">
       <h1>Your results</h1>
-      <p>Your results are shown below based on the information you provided. 
+      <p id="result_description">Your results are shown below based on the information you provided. 
         To adjust the results, edit the form and click “calculate repayments” again.</p>
 
       <div class="cost_container">
 
         <p>Your monthly repayments</p>
-        <p id="monthly_repayment"></p>
-        <hr>
+        <p id="monthly_repayment">£1,797.74</p>
+        <hr class="cost_container_linebreak">
         <p>Total you'll repay over the term</p>
-        <p id="total_repayment"></p>
+        <p id="total_repayment">£539,332.94</p>
 
       </div>
+      <div class="empty_div"></div> <!-- For layout -->
     </div>
 
   </div>
-
-
-  <!-- Empty results start -->
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  <!-- Completed results end -->
 
   <script src="index.js"></script>
 </body>
