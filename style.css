@@ -9,14 +9,18 @@ body{
     font-size: 14px;
     font-weight: 500, 700;
     font-family: 'Plus Jakarta Sans', sans-serif;
+
+    /* result_box translate(-50px) */
+    /* Set all element to center */
+    padding-left: 50px; 
 }
 
 .calculator_box{
     background-color: hsl(0, 0%, 100%); 
     color: hsl(200, 24%, 40%);
     box-sizing: border-box;
-    max-width: 520px;
-    max-height: 500px;
+    width: 520px;
+    height: 500px;
     padding: 30px;
     padding-right: 80px;  /* padding 30 + translate(50) */
     border-radius: 20px;
@@ -51,7 +55,7 @@ label, button{
     align-items: center;
     margin-bottom: 15px;
 }
-#mortgage_calculator_heading{
+.mortgage_calculator_heading{
     margin-top: 0;
     display: inline-block;
     color: hsl(202, 55%, 16%);
@@ -90,6 +94,7 @@ label:hover{
     text-align: center;
     padding: 8px;
     min-width: 40px;
+    max-width: 55px;
 }
 .input_tag_type1{
     border-radius: 5px 0 0 5px;
@@ -132,7 +137,7 @@ label > input{
     background-color: hsl(0, 0%, 100%);
 }
 
-
+/* Calculate Button */
 form > button{
     margin-top: 40px;
     border-radius: 20px;
@@ -172,14 +177,17 @@ form > button:hover{
     align-items: center;
 }
 .empty_result{
-    display: none;
+    /* Change state */
+    display: none; 
 }
 #result_cal_icon{
     margin: auto;
 }
 
 .completed_result{
-    /* display: none; */
+    /* Change state */
+    /* display: none;   */
+
     text-align: left;
     align-items: normal;
 }
@@ -218,16 +226,37 @@ form > button:hover{
 
 @media screen and (max-width: 665px){
     body{
-        background-color: blue;
+        /* background-color: blue; */ /* debug */
         display: block;
-        /* flex-wrap: wrap; */
         padding: 0;
+        min-width: 305px;
     }
-    #calculator_box{
-        width: 100vw;
-    }
-    #result_box{
-        transform: translate(+50px);
+    .calculator_box{
         width: 100%;
+        border-radius: 0px;
+        padding: 30px;
+    }
+
+    /* Heading */
+    .form_top_row{
+       flex-wrap: wrap;
+    }
+    .mortgage_calculator_heading{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Mortgage Term & Interest Rate */
+    .input_sub_item{
+        width: 100%;
+    }
+    .seperate_div{
+        display: none;
+    }
+
+    .result_box{
+        transform: translate(0);
+        width: 100%;
+        border-radius: 0px;
     }
 }
