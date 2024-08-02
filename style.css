@@ -15,12 +15,19 @@ body{
     padding-left: 50px; 
 }
 
+.main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 590px;
+}
+
 .calculator_box{
     background-color: hsl(0, 0%, 100%); 
     color: hsl(200, 24%, 40%);
     box-sizing: border-box;
     width: 520px;
-    height: 500px;
+    max-height: 590px;
     padding: 30px;
     padding-right: 80px;  /* padding 30 + translate(50) */
     border-radius: 20px;
@@ -159,6 +166,11 @@ form > button:hover{
     background-color: hsl(61, 70%, 52%, 60%);
 }
 
+.error_message{
+    margin-bottom: 0px;
+    color: hsl(4, 69%, 50%);
+}
+
 /* Result Box */
 .result_box{
     background-color: hsl(202, 55%, 16%);
@@ -179,7 +191,7 @@ form > button:hover{
 }
 .empty_result{
     /* Change state */
-    /* display: none;  */
+    display: block; 
 }
 #result_cal_icon{
     margin: auto;
