@@ -85,6 +85,7 @@ label:hover{
     outline: hsl(61, 70%, 52%) solid 2px;
     background-color: hsl(61, 70%, 52%);
 }
+
 .input_tag{
     background-color: hsl(202, 86%, 94%, 0%);
     border-radius: 0 5px 5px 0;
@@ -178,7 +179,7 @@ form > button:hover{
 }
 .empty_result{
     /* Change state */
-    display: none; 
+    /* display: none;  */
 }
 #result_cal_icon{
     margin: auto;
@@ -186,7 +187,7 @@ form > button:hover{
 
 .completed_result{
     /* Change state */
-    /* display: none;   */
+    /* display: none; */
 
     text-align: left;
     align-items: normal;
@@ -224,15 +225,27 @@ form > button:hover{
     height: 80px;
 }
 
-@media screen and (max-width: 665px){
+@media screen and (max-width: 850px){
+    .calculator_box{
+        min-height: 530px;
+    }
+    .result_box{
+        min-height: 530px;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 700px){
     body{
         /* background-color: blue; */ /* debug */
         display: block;
         padding: 0;
-        min-width: 305px;
+        min-width: 230px;
     }
     .calculator_box{
         width: 100%;
+        height: 580px;
+        min-height: 580px;
         border-radius: 0px;
         padding: 30px;
     }
@@ -252,6 +265,11 @@ form > button:hover{
     }
     .seperate_div{
         display: none;
+    }
+
+    form > button{
+        width: 100%;
+        margin-top: 20px;
     }
 
     .result_box{
