@@ -68,10 +68,9 @@ const required_message = "This field is required";
 
 // Calculate repayment
 form.addEventListener("submit", (e) => {
-    e.preventDefault();show_result();
+    e.preventDefault();
 
     if(validate()){
-        calculate();
         show_result();
     }
 })
@@ -107,16 +106,22 @@ function reset_error(){
 function calculate(){
     console.log("calculate");
     // Repayment type
-    let P = mortgage_amount.value;
-    let r = (interest_rate / 100) / 12;
-    let n = mortgage_term.value * 12;
+    let P = Number(mortgage_amount.value);
+    let r = ( Number(interest_rate) / 100 ) / 12;
+    let n = Number(mortgage_term.value) * 12;
 
     // equation = Pr / ( 1 - ( 1 / (1-r)^n ))
     let monthly_repay = ( P * r ) / ( 1 - ( 1 / Math.pow((1-r), n) ) );
     let total_repay = monthly_repay * n;
+    return monthly_repay, total_repay;
 }
 
 function show_result(){
+    let monthly_repay, total_repay = calculate();
+    console.log(`monthly: ${monthly_repay}`);
+    console.log(`total: ${total_repay}`);
+    document.getElementById("monthly_repayment").innerHTML = "£" + monthly_repay;
+    document.getElementById("total_repayment").innerHTML = "£" + total_repay;
     empty_result.style.display = "none";
     completed_result.style.display = "block";
 }
