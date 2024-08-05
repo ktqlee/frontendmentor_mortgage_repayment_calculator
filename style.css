@@ -231,6 +231,7 @@ form > button:hover{
 #total_repayment{
     color: hsl(0, 0%, 100%);
     font-size: 1.2rem;
+    font-weight: bold;
     margin: 0;
 }
 .empty_div{

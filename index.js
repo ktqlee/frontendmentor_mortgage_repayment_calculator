@@ -39,6 +39,13 @@ clear_all.addEventListener("click", (e) => {
 
     // Active State for label
     reset_label_activestate();
+
+    // Reset validation
+    reset_error();
+
+    // Rest result box
+    empty_result.style.display = "block";
+    completed_result.style.display = "none";
 })
 
 // Active state for mortgage type
@@ -101,27 +108,37 @@ function validate(){
 function reset_error(){
     mortgage_amount_error.innerHTML = mortgage_term_error.innerHTML =
     interest_rate_error.innerHTML = mortgage_type_error.innerHTML = "";
+    set_div_same_height();
 }
 
 function calculate(){
-    console.log("calculate");
-    // Repayment type
-    let P = Number(mortgage_amount.value);
-    let r = ( Number(interest_rate) / 100 ) / 12;
-    let n = Number(mortgage_term.value) * 12;
 
-    // equation = Pr / ( 1 - ( 1 / (1-r)^n ))
-    let monthly_repay = ( P * r ) / ( 1 - ( 1 / Math.pow((1-r), n) ) );
-    let total_repay = monthly_repay * n;
-    return monthly_repay, total_repay;
+    let P = Number(mortgage_amount.value);
+    let r = ( Number(interest_rate.value) / 100 ) / 12;
+    let n = Number(mortgage_term.value) * 12
+    let monthly_repay, total_repay;
+
+    // Repayment type
+    if(mortgage_type_input[0].checked){ 
+        // equation = Pr / ( 1 - (1+r)^-N )
+        monthly_repay = ( P * r ) / ( 1 - Math.pow( (1+r), -n ) );
+        total_repay = monthly_repay * n
+    } 
+    // Interest only type  
+    else{
+        monthly_repay = P * r;
+        total_repay = monthly_repay * 12 * 25 + P;
+    }
+    return [monthly_repay.toFixed(2), total_repay.toFixed(2)];
 }
 
 function show_result(){
-    let monthly_repay, total_repay = calculate();
-    console.log(`monthly: ${monthly_repay}`);
-    console.log(`total: ${total_repay}`);
-    document.getElementById("monthly_repayment").innerHTML = "£" + monthly_repay;
+    let [pay_amount, total_repay] = calculate();
+
+    // Display figure
+    document.getElementById("monthly_repayment").innerHTML = "£" + pay_amount;
     document.getElementById("total_repayment").innerHTML = "£" + total_repay;
+
     empty_result.style.display = "none";
     completed_result.style.display = "block";
 }
