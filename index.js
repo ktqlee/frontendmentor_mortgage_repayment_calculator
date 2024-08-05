@@ -143,7 +143,10 @@ function show_result(){
     completed_result.style.display = "block";
 }
 
-
-
-
+// Input formatting using Cleave library
+var cleave = new Cleave('.cleave_format_digit', {
+    numeral: true,
+    numeralThousandsGroupStyle: 'thousand',
+    numeralPositiveOnly: true
+});
 

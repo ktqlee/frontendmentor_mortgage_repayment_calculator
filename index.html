@@ -14,6 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
+  <!-- Cleave Library for input formatting-->
+  <script src=" https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js "></script>
 </head>
 <body id="body">
 
@@ -31,7 +33,7 @@
 
         <label for="mortgage_amount">
           <span class="input_tag input_tag_type1">£</span>
-          <input id="mortgage_amount" type="number" min="0">
+          <input class="cleave_format_digit" id="mortgage_amount" type="text">
         </label>
         
         <p class="error_message" id="mortgage_amount_error"></p>
