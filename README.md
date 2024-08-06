@@ -46,7 +46,7 @@ This is a solution to the [Mortgage repayment calculator challenge on Frontend M
     
   - Output formatting using regular expression
 
-    ![Output Formatting](number_formatting_2.png)
+    ![Output Formatting](/readme_img/number_formatting_2.png)
 
     ```js
     // Formating number using regular expression
@@ -56,3 +56,6 @@ This is a solution to the [Mortgage repayment calculator challenge on Frontend M
     ```
     Reference: https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
 
+**6. Clear All button**
+
+https://github.com/user-attachments/assets/31891bb2-dd8e-4036-a217-9417ff97a7c1
