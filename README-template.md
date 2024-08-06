@@ -1,6 +1,6 @@
-# Frontend Mentor - Mortgage repayment calculator solution
+# Mortgage repayment calculator
 
-![Screenshot of the calculator]()
+![Screenshot of the calculator](/readme_img/calculator_screenshot.png)
 
 ## Overview
 
