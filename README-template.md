@@ -11,6 +11,7 @@ This is a solution to the [Mortgage repayment calculator challenge on Frontend M
 ### Features
 
 **1. Outputing information about monthly repayment and total repayment amounts**
+
   ![Input Formatting](/readme_img/output_payment.png)
    
 **2. Providing form validation messages if any field is incomplete**
