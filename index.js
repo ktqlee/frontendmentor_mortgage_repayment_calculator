@@ -153,7 +153,7 @@ var cleave = new Cleave('.cleave_format_digit', {
 
 // Formating number using regular expression
 function add_commas_to_number(x){
-    // regular expression copied from stack overflow
+    // Regular expression copied from stack overflow
     // https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
