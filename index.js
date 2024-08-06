@@ -113,7 +113,8 @@ function reset_error(){
 
 function calculate(){
 
-    let P = Number(mortgage_amount.value);
+    // Remove ',' before converting it to number as Cleave library add the input string with ','
+    let P = Number(mortgage_amount.value.replace(/,/g, '')); 
     let r = ( Number(interest_rate.value) / 100 ) / 12;
     let n = Number(mortgage_term.value) * 12
     let monthly_repay, total_repay;
@@ -136,8 +137,8 @@ function show_result(){
     let [pay_amount, total_repay] = calculate();
 
     // Display figure
-    document.getElementById("monthly_repayment").innerHTML = "£" + pay_amount;
-    document.getElementById("total_repayment").innerHTML = "£" + total_repay;
+    document.getElementById("monthly_repayment").innerHTML = "£" + add_commas_to_number(pay_amount);
+    document.getElementById("total_repayment").innerHTML = "£" + add_commas_to_number(total_repay);
 
     empty_result.style.display = "none";
     completed_result.style.display = "block";
@@ -150,3 +151,9 @@ var cleave = new Cleave('.cleave_format_digit', {
     numeralPositiveOnly: true
 });
 
+// Formating number using regular expression
+function add_commas_to_number(x){
+    // regular expression copied from stack overflow
+    // https://stackoverflow.com/questions/2901102/how-to-format-a-number-with-commas-as-thousands-separators
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
